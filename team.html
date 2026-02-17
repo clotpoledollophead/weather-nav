@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於團隊 - AI 水情獵人</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white">
+                    <i class="fa-solid fa-cloud-showers-heavy"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-gray-900">AI 水情獵人</span>
+            </a>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+                <a href="index.html#problem" class="hover:text-blue-600 transition">為什麼需要</a>
+                <a href="index.html#features" class="hover:text-blue-600 transition">核心技術</a>
+                <a href="index.html#demo" class="hover:text-blue-600 transition">實機演示</a>
+                <a href="#" class="text-blue-600 font-bold">關於團隊</a>
+            </div>
+            <a href="index.html" class="bg-gray-100 text-gray-900 px-5 py-2 rounded-full text-sm font-bold hover:bg-gray-200 transition">
+                <i class="fa-solid fa-arrow-left mr-2"></i>回首頁
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-20">
+        <div class="container mx-auto px-6">
+            
+            <!-- Header Text -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-block px-4 py-1.5 mb-4 rounded-full bg-blue-100 text-blue-600 text-xs font-bold tracking-wider uppercase">
+                    Our Team
+                </div>
+                <h1 class="text-4xl font-black text-gray-900 mb-6">
+                    兩人的<span class="gradient-text">數位防災</span>革命
+                </h1>
+                <p class="text-lg text-gray-500 leading-relaxed">
+                    我們結合後端 AI 運算與前端地圖互動技術，<br>
+                    致力於用最精簡的人力，解決高雄最龐大的水情問題。
+                </p>
+            </div>
+
+            <!-- Team Grid -->
+            <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                
+                <!-- Member 1: Backend & AI -->
+                <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-xl hover:shadow-2xl transition duration-300 relative overflow-hidden group">
+                    <!-- 裝飾背景 -->
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-8 -mt-8 transition group-hover:bg-blue-100"></div>
+                    
+                    <div class="relative z-10 flex flex-col items-center text-center">
+                        <div class="w-32 h-32 rounded-full border-4 border-white shadow-lg mb-6 overflow-hidden bg-gray-200">
+                            <img src="cindy.png" alt="Backend Developer" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">後端與 AI 工程師</h3>
+                        <p class="text-blue-600 font-medium mb-6">Backend & Algorithm Lead</p>
+                        
+                        <div class="w-full bg-gray-50 rounded-xl p-6 mb-6 text-left">
+                            <h4 class="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-code text-blue-500"></i> 負責項目
+                            </h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check mt-1 text-green-500"></i>
+                                    <span><strong>LLM 語意引擎：</strong>開發爬蟲與 Prompt Engineering，解析社群災情文字。</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check mt-1 text-green-500"></i>
+                                    <span><strong>虛實整合邏輯：</strong>串接氣象局 API 與資料清洗 (Data Cleaning)。</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check mt-1 text-green-500"></i>
+                                    <span><strong>路徑演算法：</strong>實作基於 NetworkX 的動態權重導航邏輯。</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="px-3 py-1 bg-gray-100 rounded-lg text-xs font-bold text-gray-600">Python</span>
+                            <span class="px-3 py-1 bg-gray-100 rounded-lg text-xs font-bold text-gray-600">FastAPI</span>
+                            <span class="px-3 py-1 bg-gray-100 rounded-lg text-xs font-bold text-gray-600">OpenAI API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 2: Frontend & Map -->
+                <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-xl hover:shadow-2xl transition duration-300 relative overflow-hidden group">
+                    <!-- 裝飾背景 -->
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-50 rounded-bl-full -mr-8 -mt-8 transition group-hover:bg-cyan-100"></div>
+
+                    <div class="relative z-10 flex flex-col items-center text-center">
+                        <div class="w-32 h-32 rounded-full border-4 border-white shadow-lg mb-6 overflow-hidden bg-gray-200">
+                            <img src="seventeen.png" alt="Frontend Developer" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">前端與介面設計師</h3>
+                        <p class="text-cyan-600 font-medium mb-6">Frontend & UI/UX Lead</p>
+                        
+                        <div class="w-full bg-gray-50 rounded-xl p-6 mb-6 text-left">
+                            <h4 class="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-mobile-screen text-cyan-500"></i> 負責項目
+                            </h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check mt-1 text-green-500"></i>
+                                    <span><strong>互動地圖開發：</strong>整合 Leaflet/Mapbox，視覺化淹水熱區。</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check mt-1 text-green-500"></i>
+                                    <span><strong>RWD 介面設計：</strong>打造適合機車騎士單手操作的 UI/UX。</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check mt-1 text-green-500"></i>
+                                    <span><strong>API 串接：</strong>處理前後端資料流與即時 WebSocket 通訊。</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="px-3 py-1 bg-gray-100 rounded-lg text-xs font-bold text-gray-600">React / Vue</span>
+                            <span class="px-3 py-1 bg-gray-100 rounded-lg text-xs font-bold text-gray-600">Tailwind</span>
+                            <span class="px-3 py-1 bg-gray-100 rounded-lg text-xs font-bold text-gray-600">Leaflet.js</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Contact Section -->
+            <div class="mt-20 bg-gray-900 rounded-3xl p-10 text-center relative overflow-hidden">
+                <div class="blob bg-blue-600 w-64 h-64 rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2 opacity-20"></div>
+                <div class="relative z-10">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">對我們的技術感興趣？</h2>
+                    <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+                        我們正在尋找落地實證的場域合作機會。如果您是防災相關單位或學術研究機構，歡迎與我們聯繫。
+                    </p>
+                    <a href="mailto:contact@ai-flood-hunter.tw" class="inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-3 rounded-xl font-bold hover:bg-gray-100 transition">
+                        <i class="fa-solid fa-envelope"></i> 聯絡團隊
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-8 mt-auto">
+        <div class="container mx-auto px-6 text-center text-sm text-gray-500">
+            <p>&copy; 2026 AI Flood Hunter Team. Designed for Kaohsiung Smart City Challenge.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

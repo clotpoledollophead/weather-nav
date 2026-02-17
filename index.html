@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 水情獵人 - 高雄智慧防災導航</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white">
+                    <i class="fa-solid fa-cloud-showers-heavy"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-gray-900">AI 水情獵人</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+                <a href="#problem" class="hover:text-blue-600 transition">為什麼需要</a>
+                <a href="#features" class="hover:text-blue-600 transition">核心技術</a>
+                <a href="#demo" class="hover:text-blue-600 transition">實機演示</a>
+                <a href="team.html" class="hover:text-blue-600 transition">關於團隊</a>
+            </div>
+            <button class="bg-gray-900 text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-gray-800 transition shadow-lg">
+                下載 App
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 hero-bg overflow-hidden">
+        <!-- 背景裝飾 -->
+        <div class="blob bg-blue-500 w-96 h-96 rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="blob bg-cyan-400 w-96 h-96 rounded-full bottom-0 right-0 translate-x-1/3 translate-y-1/3"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- 文字區 -->
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-900/50 border border-blue-700/50 text-cyan-300 text-xs font-bold tracking-wider uppercase">
+                        2026 高雄智慧城市競賽提案
+                    </div>
+                    <h1 class="text-4xl lg:text-6xl font-black text-white leading-tight mb-6">
+                        聽懂災情的<br>
+                        <span class="gradient-text">AI 導航助理</span>
+                    </h1>
+                    <p class="text-lg text-gray-400 mb-8 leading-relaxed">
+                        結合 **LLM 語意感知** 與 **氣象大數據**。<br>
+                        當豪雨來襲，我們將社群情報轉化為救命地圖，<br>
+                        為高雄市民規劃一條真正「不濕鞋」的安全回家路。
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <button class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold text-lg shadow-blue-500/30 shadow-lg transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-route"></i> 開始導航
+                        </button>
+                        <button class="px-8 py-4 bg-gray-800 hover:bg-gray-700 text-white rounded-xl font-bold text-lg border border-gray-700 transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-play"></i>觀看 Demo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 手機 Mockup 區 -->
+                <div class="lg:w-1/2 flex justify-center perspective-1000">
+                    <div class="relative w-[300px] h-[600px] bg-gray-900 rounded-[3rem] border-8 border-gray-800 shadow-2xl overflow-hidden transform rotate-y-12 rotate-z-2 hover:rotate-0 transition duration-500">
+                        <!-- 模擬 App 畫面 -->
+                        <div class="absolute top-0 w-full h-full bg-gray-100 flex flex-col">
+                            <!-- App Header -->
+                            <div class="bg-white p-4 pt-12 shadow-sm z-10">
+                                <div class="flex justify-between items-center">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                        <span class="font-bold text-gray-800">防災導航中...</span>
+                                    </div>
+                                    <i class="fa-solid fa-bell text-gray-400"></i>
+                                </div>
+                            </div>
+                            <!-- App Map Area -->
+                            <div class="flex-1 bg-blue-50 relative p-4">
+                                <!-- 模擬地圖路徑 -->
+                                <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#cbd5e1 2px, transparent 2px); background-size: 20px 20px;"></div>
+                                
+                                <!-- 淹水警示卡 -->
+                                <div class="absolute top-4 left-4 right-4 bg-red-500 text-white p-3 rounded-xl shadow-lg flex items-start gap-3 transform translate-y-2">
+                                    <i class="fa-solid fa-triangle-exclamation mt-1"></i>
+                                    <div>
+                                        <p class="font-bold text-sm">前方 500m 民族路積水</p>
+                                        <p class="text-xs opacity-90">AI 解析：水深約 30cm (淹過輪胎)</p>
+                                    </div>
+                                </div>
+
+                                <!-- 路線示意 -->
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 border-l-4 border-b-4 border-blue-500 rounded-bl-3xl"></div>
+                                <div class="absolute top-[60%] left-[20%] w-4 h-4 bg-blue-600 rounded-full border-2 border-white shadow-md"></div>
+                                <div class="absolute top-[35%] right-[25%] w-6 h-6 bg-red-500 rounded-full border-2 border-white shadow-md flex items-center justify-center text-[10px] text-white"><i class="fa-solid fa-xmark"></i></div>
+                            </div>
+                            <!-- App Bottom Sheet -->
+                            <div class="bg-white p-5 rounded-t-3xl shadow-[0_-5px_20px_rgba(0,0,0,0.1)]">
+                                <div class="flex justify-between items-end mb-2">
+                                    <div>
+                                        <h3 class="font-bold text-xl text-gray-800">避開淹水區</h3>
+                                        <p class="text-green-600 text-sm font-bold"><i class="fa-solid fa-leaf mr-1"></i>已為您重新規劃</p>
+                                    </div>
+                                    <span class="text-2xl font-black text-gray-800">18 <span class="text-sm text-gray-500 font-normal">min</span></span>
+                                </div>
+                                <button class="w-full py-3 bg-gray-900 text-white rounded-xl font-bold">開始導航</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 痛點分析 Section -->
+    <section id="problem" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">為什麼高雄需要這款 App？</h2>
+                <p class="text-gray-500">2024 凱米颱風的教訓告訴我們，面對極端氣候，傳統的防災資訊存在著巨大的「斷層」。</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="p-8 rounded-3xl bg-gray-50 hover:bg-white hover:shadow-xl transition border border-gray-100 group">
+                    <div class="w-14 h-14 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">感測器盲區</h3>
+                    <p class="text-gray-500 leading-relaxed">
+                        官方水位計精準，但無法覆蓋每條巷弄。地下道與低窪地區往往成為資訊死角，導致車輛誤入。
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="p-8 rounded-3xl bg-gray-50 hover:bg-white hover:shadow-xl transition border border-gray-100 group">
+                    <div class="w-14 h-14 bg-yellow-100 text-yellow-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">社群資訊雜亂</h3>
+                    <p class="text-gray-500 leading-relaxed">
+                        PTT、Threads 上充滿了第一手災情回報，但這些文字雜亂無章，無法即時被整合進地圖中。
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="p-8 rounded-3xl bg-gray-50 hover:bg-white hover:shadow-xl transition border border-gray-100 group">
+                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">缺乏語意理解</h3>
+                    <p class="text-gray-500 leading-relaxed">
+                        傳統系統看不懂「水淹到輪胎」是什麼意思。我們需要 AI 來翻譯這些人類語言。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 解決方案/核心技術 Section -->
+    <section id="features" class="py-20 bg-gray-900 text-white relative overflow-hidden">
+        <!-- 裝飾背景 -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-900/20 to-transparent"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-blue-400 font-bold tracking-wider uppercase mb-2">Technical Solution</h2>
+                    <h3 class="text-3xl md:text-4xl font-black mb-6 leading-snug">
+                        LLM + 氣象數據 = <br>
+                        <span class="text-white">全方位的防災大腦</span>
+                    </h3>
+                    <p class="text-gray-400 mb-8 text-lg">
+                        我們不依賴昂貴的硬體，而是利用軟體定義防災。透過虛實整合技術，打造最懂高雄路況的 AI。
+                    </p>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-600 flex-shrink-0 flex items-center justify-center font-bold">1</div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">全網語意探勘 (Semantic Mining)</h4>
+                                <p class="text-gray-400 text-sm">LLM 自動爬取在地社群貼文，將「博愛路淹水」解析為精確的 GPS 座標與深度數值。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-cyan-500 flex-shrink-0 flex items-center justify-center font-bold">2</div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">虛實整合驗證 (Hybrid Fusion)</h4>
+                                <p class="text-gray-400 text-sm">結合中央氣象署降雨 API，交叉比對社群回報，排除假消息，確保資訊精確。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-indigo-500 flex-shrink-0 flex items-center justify-center font-bold">3</div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">動態權重導航 (Dynamic Routing)</h4>
+                                <p class="text-gray-400 text-sm">演算法即時調整路網權重，自動避開積水 15cm 以上路段，實現「無感避險」。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="md:w-1/2 bg-gray-800 rounded-3xl p-8 border border-gray-700 shadow-2xl">
+                    <!-- 模擬後端處理流程的圖示 -->
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-4 bg-gray-900 rounded-xl border-l-4 border-yellow-500">
+                            <i class="fa-brands fa-facebook text-blue-500 text-2xl"></i>
+                            <div class="flex-1">
+                                <p class="text-xs text-gray-500">Input: Raw Data</p>
+                                <p class="font-mono text-sm text-gray-300">"三民區建工路這邊淹很大，機車過不去了！"</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-center text-gray-500"><i class="fa-solid fa-arrow-down"></i></div>
+                        <div class="flex items-center gap-4 p-4 bg-blue-900/30 rounded-xl border border-blue-500/30">
+                            <i class="fa-solid fa-microchip text-blue-400 text-2xl"></i>
+                            <div class="flex-1">
+                                <p class="text-xs text-blue-400 font-bold">Process: LLM Engine</p>
+                                <p class="font-mono text-sm text-blue-200">
+                                    Location: [22.651, 120.325]<br>
+                                    Depth: >20cm (High Risk)<br>
+                                    Confidence: 95%
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex justify-center text-gray-500"><i class="fa-solid fa-arrow-down"></i></div>
+                        <div class="flex items-center gap-4 p-4 bg-green-900/30 rounded-xl border border-green-500/30">
+                            <i class="fa-solid fa-map-location-dot text-green-400 text-2xl"></i>
+                            <div class="flex-1">
+                                <p class="text-xs text-green-400 font-bold">Output: Navigation</p>
+                                <p class="font-mono text-sm text-green-200">Action: Reroute via Jiuru Rd.<br>Status: Safe</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 影響力與 SDGs -->
+    <section class="py-20 bg-blue-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12">永續發展目標 (SDGs)</h2>
+            <div class="flex flex-wrap justify-center gap-8">
+                <div class="bg-white px-8 py-6 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4">
+                    <div class="w-16 h-16 bg-orange-500 text-white text-2xl font-black flex items-center justify-center rounded-lg shadow-lg">11</div>
+                    <div class="text-left">
+                        <h4 class="font-bold text-lg text-gray-800">永續城鄉</h4>
+                        <p class="text-sm text-gray-500">建構具備防災韌性的智慧城市</p>
+                    </div>
+                </div>
+                <div class="bg-white px-8 py-6 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4">
+                    <div class="w-16 h-16 bg-green-600 text-white text-2xl font-black flex items-center justify-center rounded-lg shadow-lg">13</div>
+                    <div class="text-left">
+                        <h4 class="font-bold text-lg text-gray-800">氣候行動</h4>
+                        <p class="text-sm text-gray-500">強化對氣候災害的適應能力</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <h3 class="text-white font-bold text-xl mb-2">AI 水情獵人</h3>
+                <p class="text-sm">2026 高雄智慧城市競賽參賽作品</p>
+            </div>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-github text-2xl"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-solid fa-envelope text-2xl"></i></a>
+            </div>
+        </div>
+        <div class="text-center text-xs mt-8 opacity-50">
+            &copy; 2026 AI Flood Hunter Team. Designed for Kaohsiung.
+        </div>
+    </footer>
+
+</body>
+</html>
